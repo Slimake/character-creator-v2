@@ -18,6 +18,7 @@ import {
 } from './CharacterEditor.helpers';
 import styles from './CharacterEditor.module.css';
 
+
 function App() {
   const [body, setBody] = React.useState(0);
   const [head, setHead] = React.useState(0);
@@ -30,6 +31,17 @@ function App() {
 
   return (
     <main className={styles.characterEditor}>
+      <div className={styles.characterWrapper}>
+        <Character
+          body={body}
+          head={head}
+          face={face}
+          accessory={accessory}
+          skinColor={skinColor}
+          clothesColor={clothesColor}
+        />
+      </div>
+
       <MaxWidthWrapper className={styles.maxWidthWrapper}>
         <header className={styles.header}>
           <h1 className={styles.title}>Create your Character</h1>
@@ -77,17 +89,6 @@ function App() {
           />
         </div>
       </MaxWidthWrapper>
-
-      <div className={styles.characterWrapper}>
-        <Character
-          body={body}
-          head={head}
-          face={face}
-          accessory={accessory}
-          skinColor={skinColor}
-          clothesColor={clothesColor}
-        />
-      </div>
     </main>
   );
 }
